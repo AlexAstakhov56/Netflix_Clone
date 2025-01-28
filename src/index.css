@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import "tailwindcss";
+
+body {
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+@theme {
+  --color-primary: #080a1a;
+  --color-secondary: #f20000;
+  --color-blue: #0b0f29;
+  --color-star: #ffb000;
+  --color-text: #c0c0c0;
+  --color-border: #4b5563;
+  --color-gray: #e0d5d5;
+
+  /* height:{
+    header:"560px",
+    rate:"400px"
+  } */
+}
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 2.6rem;
+}
+.z {
+  z-index: 999;
+}
+.linear-bg {
+  background: linear-gradient(270deg, #07091c00 0.17%, #080a1ad6 100%);
+}
+/* .my-flex-col {
+  @apply flex flex-col justify-center items-center
+}
+.my-flex-row {
+  @apply flex flex-row justify-center items-center
+}
+.my-flex-btn {
+  @apply flex justify-between items-center
+}*/
+
+.my-hover {
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+.my-hovered:hover .my-hover {
+  opacity: 100%;
+}
