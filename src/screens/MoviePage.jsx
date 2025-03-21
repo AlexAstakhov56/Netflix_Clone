@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
-import { Movies } from "../../Data/MovieData";
 import Info from "../components/Movie/Info";
 import Watch from "../components/Movie/Watch";
+import { useSelector } from "react-redux";
 
 const MoviePage = () => {
   const { id } = useParams();
+  const Movies = useSelector((state) => state.movies.movies);
   const currentMovie = Movies.find((movie) => movie.title === id);
   return (
     <div className="bg-primary">

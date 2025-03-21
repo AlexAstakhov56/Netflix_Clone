@@ -1,8 +1,10 @@
+import backgroundImage from "/background.jpg";
+
 const Banner = ({ text }) => {
   return (
     <div className="w-full bg-gray lg:h-80 relative overflow-hidden rounded-md">
       <img
-        src="/images/background.jpg"
+        src={backgroundImage}
         alt="banner"
         className="w-full h-full object-cover "
       />

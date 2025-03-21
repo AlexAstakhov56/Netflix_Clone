@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Movies } from "../../Data/MovieData";
 import MovieItem from "../components/MovieItem";
 import FilterItem from "../components/FilterItem";
 import PageButton from "../components/pageButton";
+import MovieModal from "../components/MovieModal";
+import { useSelector } from "react-redux";
 
 const filters = [
   "All",
@@ -15,8 +16,12 @@ const filters = [
 ];
 
 const MoviesPage = () => {
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [page, setPage] = useState(1);
   const [currentFilter, setCurrentFilter] = useState("All");
+
+  const Movies = useSelector((state) => state.movies.movies);
 
   const filteredMovies =
     currentFilter === "All"
@@ -58,9 +63,37 @@ const MoviesPage = () => {
         ))}
       </div>
 
-      <div className="grid mt-10 xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
+      <div className="mb-3 mt-5 text-[22px]">
+        <label className="flex items-center">
+          <input
+            type="checkbox"
+            checked={isAdmin}
+            onChange={() => setIsAdmin(!isAdmin)}
+            className="w-[1.2em] h-[1.2em] cursor-pointer outline-0"
+          />
+          <span className="ml-3">I'm admin</span>
+        </label>
+      </div>
+
+      {isAdmin && (
+        <button
+          onClick={() => setIsModalVisible(true)}
+          className="bg-secondary text-white font-lg font-semibold py-2 px-5 cursor-pointer rounded-xl"
+        >
+          Add a Movie
+        </button>
+      )}
+
+      <MovieModal
+        isModalVisible={isModalVisible}
+        setIsModalVisible={setIsModalVisible}
+      />
+
+      <div className="grid mt-5 xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
         {pagedMovies.map((movie) => (
-          <MovieItem key={movie.title} movie={movie} />
+          <>
+            <MovieItem key={movie.title} isAdmin={isAdmin} movie={movie} />
+          </>
         ))}
       </div>
 
