@@ -44,7 +44,7 @@ export const Movies = [
     year: "2019",
     time: "2h",
     video: endgameVideo,
-    rate: 8.2,
+    rate: 8.4,
   },
   {
     title: "Interstellar",
@@ -64,7 +64,7 @@ export const Movies = [
     year: "2018",
     time: "2h 9m",
     video: greenBookVideo,
-    rate: 7.9,
+    rate: 8.2,
   },
   {
     title: "Titanic",
@@ -74,7 +74,7 @@ export const Movies = [
     year: "1997",
     time: "3h 14m",
     video: titanicVideo,
-    rate: 7.8,
+    rate: 7.9,
   },
 
   {
@@ -85,7 +85,7 @@ export const Movies = [
     year: "2017",
     time: "2h 44m",
     video: bladeRunnerVideo,
-    rate: 7.2,
+    rate: 8.0,
   },
   {
     title: "Avatar",
@@ -95,7 +95,7 @@ export const Movies = [
     year: "2009",
     time: "3h 5m",
     video: avatarVideo,
-    rate: 8.0,
+    rate: 7.9,
   },
   {
     title: "The Illusionist",
@@ -105,7 +105,7 @@ export const Movies = [
     year: "2005",
     time: "1h 50m",
     video: illusionistVideo,
-    rate: 7.3,
+    rate: 7.5,
   },
   {
     title: "Star Wars 3 - Revenge of the Sith",
@@ -115,7 +115,7 @@ export const Movies = [
     year: "2005",
     time: "2h 15m",
     video: starWarsVideo,
-    rate: 8.1,
+    rate: 7.6,
   },
   {
     title: "Home Alone",
@@ -125,7 +125,7 @@ export const Movies = [
     year: "1990",
     time: "1h 42m",
     video: homeAloneVideo,
-    rate: 8.2,
+    rate: 7.7,
   },
   {
     title: "Avengers Infinity War",
@@ -135,7 +135,7 @@ export const Movies = [
     year: "2018",
     time: "2h 29m",
     video: infinityWarVideo,
-    rate: 8.1,
+    rate: 8.4,
   },
   {
     title: "Three meters above the sky",
@@ -145,7 +145,7 @@ export const Movies = [
     year: "2010",
     time: "2h 3m",
     video: threemetersVideo,
-    rate: 6.8,
+    rate: 6.7,
   },
   {
     title: "10 years later",
@@ -155,7 +155,7 @@ export const Movies = [
     year: "2012",
     time: "1h 40m",
     video: tenyearsVideo,
-    rate: 6.1,
+    rate: 5.8,
   },
   {
     title: "Shutter Island",
@@ -165,7 +165,7 @@ export const Movies = [
     year: "2009",
     time: "2h 12m",
     video: islandVideo,
-    rate: 8.5,
+    rate: 8.2,
   },
   {
     title: "Now you see me",
@@ -175,7 +175,7 @@ export const Movies = [
     year: "2013",
     time: "1h 50m",
     video: nowyouseeVideo,
-    rate: 7.7,
+    rate: 7.2,
   },
   {
     title: "The Mist",
@@ -185,7 +185,7 @@ export const Movies = [
     year: "2007",
     time: "2h 6m",
     video: mistVideo,
-    rate: 7.6,
+    rate: 7.1,
   },
   {
     title: "Insidious",
@@ -205,7 +205,7 @@ export const Movies = [
     year: "2010",
     time: "1h 43m",
     video: johnVideo,
-    rate: 6.8,
+    rate: 7.5,
   },
   {
     title: "Gentlemen",
@@ -215,6 +215,6 @@ export const Movies = [
     year: "2019",
     time: "1h 53m",
     video: gentlemenVideo,
-    rate: 8.6,
+    rate: 8.0,
   },
 ];

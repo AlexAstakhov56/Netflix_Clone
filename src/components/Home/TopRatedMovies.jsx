@@ -30,7 +30,7 @@ const TopRatedMovies = () => {
           speed={1000}
           loop={true}
         >
-          {Movies.filter((movie) => movie.rate > 8.0).map((movie) => (
+          {Movies.filter((movie) => movie.rate >= 8.0).map((movie) => (
             <SwiperSlide key={movie.title}>
               <div className="h-[400px] my-hovered border border-border bg-blue overflow-hidden rounded-lg">
                 <img
@@ -59,7 +59,8 @@ const TopRatedMovies = () => {
                     Category: {movie.category}
                   </div>
                   <div className="flex justify-center items-center text-xl text-gray">
-                    Rate: <span className="text-star ml-2">{movie.rate}</span>{" "}
+                    IMDB Rate:{" "}
+                    <span className="text-star ml-2">{movie.rate}</span>{" "}
                     <FaStar className="text-star ml-1" />
                   </div>
                 </div>

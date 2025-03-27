@@ -257,7 +257,7 @@ const MovieModal = ({ isModalVisible, setIsModalVisible, movie = {} }) => {
                   />
                 </div>
 
-                <div className="my-4 text-lg">
+                {/* <div className="my-4 text-lg">
                   <p className="font-semibold mb-2">Rate</p>
                   <input
                     type="number"
@@ -266,7 +266,7 @@ const MovieModal = ({ isModalVisible, setIsModalVisible, movie = {} }) => {
                     placeholder="Enter a movie rate:"
                     className="border rounded-lg py-2 px-4"
                   />
-                </div>
+                </div> */}
 
                 <div className="flex gap-5 justify-center items-center text-lg">
                   <button

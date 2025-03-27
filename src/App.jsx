@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import MoviesPage from "./screens/MoviesPage";
 import MoviePage from "./screens/MoviePage";
 import { Toaster } from "react-hot-toast";
+import LoginPage from "./screens/LoginPage";
 
 export default function App() {
   const ScrollToTop = () => {
@@ -49,6 +50,7 @@ export default function App() {
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/movies/:id" element={<MoviePage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/favourites" element={<Favourites />} />
           <Route path="*" element={<NotFound />} />

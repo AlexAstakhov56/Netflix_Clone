@@ -1,10 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
 import { Movies } from "../../Data/MovieData";
 import SearchItem from "../components/SearchItem";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setUsername, setIsAdmin } from "../store/authSlice";
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,10 +23,17 @@ const Navbar = () => {
       : "text-gray text-lg hover:text-secondary transition-colors duration-200";
 
   const favourites = useSelector((state) => state.favourites.favourites);
+  const auth = useSelector((state) => state.auth.auth);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(setUsername(""));
+    dispatch(setIsAdmin(false));
+  };
 
   return (
     <div className="bg-primary sticky shadow-md top-0 z-20">
-      <div className="container mx-auto py-6  lg:grid gap-10 grid-cols-7 justify-between items-center">
+      <div className="container mx-auto py-6 lg:grid gap-6 grid-cols-7 justify-between items-center">
         <div className="col-span-1 lg:block hidden">
           <NavLink to="/">
             <img src="/logo.png" className="w-full h-12 object-contain" />
@@ -32,7 +41,7 @@ const Navbar = () => {
         </div>
 
         <div className="col-span-3 relative">
-          <form className="w-full text-sm bg-gray rounded flex justify-between items-center gap-4">
+          <form className="w-[500px] text-sm bg-gray rounded flex justify-between items-center gap-4">
             <button
               type="submit"
               className="w-12 flex flex-col justify-center cursor-pointer items-center bg-secondary h-12 rounded text-white"
@@ -48,7 +57,7 @@ const Navbar = () => {
             />
           </form>
           {searchQuery.length > 0 && (
-            <div className="w-full rounded absolute top-12 z-20">
+            <div className="w-[500px] rounded absolute top-12 z-20">
               {searchedMovies.map((movie) => (
                 <SearchItem title={movie.title} onClick={handleSearch} />
               ))}
@@ -66,15 +75,36 @@ const Navbar = () => {
           <NavLink to="/about" className={linkStyles}>
             About
           </NavLink>
-          <NavLink to="/contacts" className={linkStyles}>
+          {/* <NavLink to="/contacts" className={linkStyles}>
             Contacts
-          </NavLink>
+          </NavLink> */}
           <NavLink to="/favourites" className={`${linkStyles} relative`}>
             <FaHeart className="h-7 w-7" />
             <div className="w-5 h-5 absolute text-sm flex flex-col justify-center items-center bg-secondary text-white -top-3 -right-2 rounded-full">
               {favourites.length}
             </div>
           </NavLink>
+          <div className="flex items-center gap-3">
+            <FaUserCircle className="h-8 w-8" />
+            {auth.username === "" ? (
+              <NavLink to="/login" className={linkStyles}>
+                Login
+              </NavLink>
+            ) : (
+              <>
+                <div>
+                  <p className="text-lg font-semibold">{auth.username}</p>
+                  {auth.isAdmin && <p className="text-md text-gray">admin</p>}
+                  <div
+                    className="text-md cursor-pointer text-white hover:text-secondary transition-colors duration-200"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>

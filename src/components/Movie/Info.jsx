@@ -35,7 +35,7 @@ const Info = ({ movie }) => {
               Icon={IoCalendarNumberSharp}
             />
             <InfoIcon info="Time:" data={movie.time} Icon={FaRegClock} />
-            <InfoIcon info="Rate:" data={movie.rate} Icon={FaStar} />
+            <InfoIcon info="IMDB Rate:" data={movie.rate} Icon={FaStar} />
 
             <button
               onClick={() => handleFavClick(dispatch, favourites, movie)}

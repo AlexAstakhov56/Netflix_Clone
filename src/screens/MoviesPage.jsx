@@ -16,12 +16,12 @@ const filters = [
 ];
 
 const MoviesPage = () => {
-  const [isAdmin, setIsAdmin] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [page, setPage] = useState(1);
   const [currentFilter, setCurrentFilter] = useState("All");
 
   const Movies = useSelector((state) => state.movies.movies);
+  const auth = useSelector((state) => state.auth.auth);
 
   const filteredMovies =
     currentFilter === "All"
@@ -63,7 +63,7 @@ const MoviesPage = () => {
         ))}
       </div>
 
-      <div className="mb-3 mt-5 text-[22px]">
+      {/* <div className="mb-3 mt-5 text-[22px]">
         <label className="flex items-center">
           <input
             type="checkbox"
@@ -73,12 +73,12 @@ const MoviesPage = () => {
           />
           <span className="ml-3">I'm admin</span>
         </label>
-      </div>
+      </div> */}
 
-      {isAdmin && (
+      {auth.isAdmin && (
         <button
           onClick={() => setIsModalVisible(true)}
-          className="bg-secondary text-white font-lg font-semibold py-2 px-5 cursor-pointer rounded-xl"
+          className="bg-secondary text-white mt-5 font-lg font-semibold py-2 px-5 cursor-pointer rounded-xl"
         >
           Add a Movie
         </button>
@@ -92,7 +92,7 @@ const MoviesPage = () => {
       <div className="grid mt-5 xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
         {pagedMovies.map((movie) => (
           <>
-            <MovieItem key={movie.title} isAdmin={isAdmin} movie={movie} />
+            <MovieItem key={movie.title} isAdmin={auth.isAdmin} movie={movie} />
           </>
         ))}
       </div>
