@@ -52,7 +52,7 @@ const MoviesPage = () => {
         <span className="text-secondary">{filteredMovies.length}</span>
       </p>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 flex-wrap">
         {filters.map((filter) => (
           <FilterItem
             key={filter}

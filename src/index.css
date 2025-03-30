@@ -32,7 +32,9 @@ select:focus {
   } */
 }
 .container {
-  max-width: 1300px;
+  max-width: 1270px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: 0 auto;
 }
 h1 {
@@ -44,15 +46,6 @@ h1 {
 .linear-bg {
   background: linear-gradient(270deg, #07091c00 0.17%, #080a1ad6 100%);
 }
-/* .my-flex-col {
-  @apply flex flex-col justify-center items-center
-}
-.my-flex-row {
-  @apply flex flex-row justify-center items-center
-}
-.my-flex-btn {
-  @apply flex justify-between items-center
-}*/
 
 .my-hover {
   opacity: 0;
@@ -60,4 +53,8 @@ h1 {
 }
 .my-hovered:hover .my-hover {
   opacity: 100%;
+}
+
+.swiper-container {
+  width: 480px;
 }

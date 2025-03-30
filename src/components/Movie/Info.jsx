@@ -17,12 +17,12 @@ const Info = ({ movie }) => {
         className="w-full h-full hidden xl:inline-block object-cover"
       />
       <div className="bg-primary xl:opacity-90 flex flex-col justify-center items-center xl:absolute top-0 left-0 right-0 bottom-0">
-        <div className="container grid lg:grid-cols-2 grid-cols-1 gap-20">
-          <div className="w-full h-[450px]">
+        <div className="container grid lg:grid-cols-2 grid-cols-1 md:gap-20 gap-10">
+          <div className="w-full md:h-[400px] h-[250px]">
             <img
               src={movie.image}
               alt={movie.title}
-              className="w-full h-full"
+              className="w-full md:h-full h-[250px]"
             />
           </div>
           <div className="w-full ">
@@ -42,8 +42,8 @@ const Info = ({ movie }) => {
               className="bg-secondary text-xl rounded-lg cursor-pointer px-6 py-2"
             >
               {findMovieInFav(favourites, movie.title)
-                ? "Remove To Favourites"
-                : "Add From Favourites"}
+                ? "Remove From Favourites"
+                : "Add To Favourites"}
             </button>
           </div>
         </div>

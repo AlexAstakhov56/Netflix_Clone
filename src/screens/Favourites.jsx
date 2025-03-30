@@ -9,11 +9,15 @@ const Favourites = () => {
   return (
     <div className="container min-h-screen py-12">
       <Title title="Your Favourite Movies" Icon={FaHeart} />
-      <div className="grid sm:mt-10 mt-6 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
-        {favourites.map((fav) => (
-          <MovieItem key={fav.title} movie={fav} />
-        ))}
-      </div>
+      {favourites.length ? (
+        <div className="grid sm:mt-10 mt-6 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
+          {favourites.map((fav) => (
+            <MovieItem key={fav.title} movie={fav} />
+          ))}
+        </div>
+      ) : (
+        <div className="text-xl my-6">There is no favourite movies now</div>
+      )}
     </div>
   );
 };

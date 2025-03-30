@@ -24,6 +24,18 @@ const TopRatedMovies = () => {
         <Swiper
           navigation={{ nextEl, prevEl }}
           modules={[Autoplay, Navigation]}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            480: {
+              slidesPerView: 2,
+            },
+
+            865: {
+              slidesPerView: 4,
+            },
+          }}
           slidesPerView={4}
           spaceBetween={40}
           autoplay={true}

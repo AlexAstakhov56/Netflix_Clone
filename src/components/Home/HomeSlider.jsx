@@ -12,7 +12,7 @@ const HomeSlider = () => {
   const favourites = useSelector((state) => state.favourites.favourites);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full md:block hidden">
       <Swiper
         modules={[Autoplay]}
         spaceBetween={0}

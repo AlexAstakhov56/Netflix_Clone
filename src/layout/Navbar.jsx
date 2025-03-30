@@ -19,8 +19,8 @@ const Navbar = () => {
 
   const linkStyles = ({ isActive }) =>
     isActive
-      ? "text-secondary text-lg"
-      : "text-gray text-lg hover:text-secondary transition-colors duration-200";
+      ? "text-secondary md:text-lg text-sm"
+      : "text-gray md:text-lg text-sm hover:text-secondary transition-colors duration-200";
 
   const favourites = useSelector((state) => state.favourites.favourites);
   const auth = useSelector((state) => state.auth.auth);
@@ -33,15 +33,15 @@ const Navbar = () => {
 
   return (
     <div className="bg-primary sticky shadow-md top-0 z-20">
-      <div className="container mx-auto py-6 lg:grid gap-6 grid-cols-7 justify-between items-center">
-        <div className="col-span-1 lg:block hidden">
+      <div className="container mx-auto py-6 lg:grid gap-6 md:grid-cols-7 grid-cols-2 md:justify-between justify-center items-center">
+        <div className="col-span-1 lg:block">
           <NavLink to="/">
             <img src="/logo.png" className="w-full h-12 object-contain" />
           </NavLink>
         </div>
 
-        <div className="col-span-3 relative">
-          <form className="w-[500px] text-sm bg-gray rounded flex justify-between items-center gap-4">
+        <div className="md:col-span-3 col-span-1 relative flex justify-center my-5 md:my-0">
+          <form className="md:w-[500px] w-[400px] text-sm bg-gray rounded flex justify-between items-center gap-4">
             <button
               type="submit"
               className="w-12 flex flex-col justify-center cursor-pointer items-center bg-secondary h-12 rounded text-white"
@@ -53,11 +53,11 @@ const Navbar = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search for movie"
-              className="font-medium placeholder:text-border text-primary text-lg px-1 w-11/12 h-12"
+              className="font-medium placeholder:text-border text-primary md:text-lg text-md px-1 w-11/12 h-12"
             />
           </form>
           {searchQuery.length > 0 && (
-            <div className="w-[500px] rounded absolute top-12 z-20">
+            <div className="md:w-[500px] w-[400px] rounded absolute top-12 z-20">
               {searchedMovies.map((movie) => (
                 <SearchItem title={movie.title} onClick={handleSearch} />
               ))}
@@ -65,7 +65,7 @@ const Navbar = () => {
           )}
         </div>
 
-        <div className="col-span-3 font-medium hidden text-sm xl:gap-15 justify-between items-center lg:flex xl:justify-end">
+        <div className="col-span-3 font-medium xl:gap-15 md:justify-between justify-center items-center flex gap-5 xl:justify-end">
           <NavLink to="/" className={linkStyles}>
             Home
           </NavLink>
