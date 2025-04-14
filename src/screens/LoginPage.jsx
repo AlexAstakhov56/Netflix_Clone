@@ -39,6 +39,7 @@ const LoginPage = () => {
           <div className="md:text-2xl text-lg font-semibold">Login</div>
           <input
             value={user}
+            maxLength={10}
             onChange={(e) => setUser(e.target.value)}
             className="border p-2 rounded-lg md:text-lg text-sm"
             type="text"

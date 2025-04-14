@@ -41,7 +41,7 @@ const Navbar = () => {
         </div>
 
         <div className="md:col-span-3 col-span-1 relative flex justify-center my-5 md:my-0">
-          <form className="md:w-[500px] w-[400px] text-sm bg-gray rounded flex justify-between items-center gap-4">
+          <form className="md:w-[400px] w-[300px] text-sm bg-gray rounded flex justify-between items-center gap-4">
             <button
               type="submit"
               className="w-12 flex flex-col justify-center cursor-pointer items-center bg-secondary h-12 rounded text-white"
@@ -57,7 +57,7 @@ const Navbar = () => {
             />
           </form>
           {searchQuery.length > 0 && (
-            <div className="md:w-[500px] w-[400px] rounded absolute top-12 z-20">
+            <div className="md:w-[400px] w-[300px] rounded absolute top-12 z-20">
               {searchedMovies.map((movie) => (
                 <SearchItem title={movie.title} onClick={handleSearch} />
               ))}
@@ -93,7 +93,9 @@ const Navbar = () => {
             ) : (
               <>
                 <div>
-                  <p className="text-lg font-semibold">{auth.username}</p>
+                  <p className="md:text-md text-sm font-semibold">
+                    {auth.username}
+                  </p>
                   {auth.isAdmin && <p className="text-md text-gray">admin</p>}
                   <div
                     className="text-md cursor-pointer text-white hover:text-secondary transition-colors duration-200"
