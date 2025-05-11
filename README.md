@@ -1,8 +1,15 @@
-# React + Vite
+# Welcome to my Netflix Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Данный проект представляет собой упрощенный онлайн-кинотеатр
 
-Currently, two official plugins are available:
+### Задачи, решенные в этом проекте:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Визуально приятный и адаптивный дизайн (Tailwind CSS)
+- Реализация системы избранного (Redux ToolKit)
+- Роутинг (React Router)
+- Функция поиска фильмов
+- Фильтрация и пагинация фильмов
+- Локальная авторизация
+- Возможность управления контентом (CRUD-операции)
+- Всплывающие уведомления (React hot toast)
+- Интерактивные слайдеры (SwiperJS)
